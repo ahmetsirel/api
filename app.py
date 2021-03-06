@@ -7,13 +7,16 @@ from flask import (
     url_for,
 )
 app = Flask(__name__)
-app.secret_key = "ssssh don't tell anyone"
 
 
 @app.route("/", methods=["GET"])
 def index():
     print("test")
-    return{'data': "Test"}
+    name = request.args.get("name")
+    surname = request.args.get("surname")
+    return{'data': "Test",
+            'name':name,
+            'surname': surname}
 
 @app.route("/test", methods=["GET"])
 def add_compliment():
@@ -21,4 +24,4 @@ def add_compliment():
     return {'data': "Erdem/Test"}
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=80, debug=True)
