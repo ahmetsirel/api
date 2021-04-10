@@ -1,0 +1,21 @@
+version: '2.1'
+networks:
+    test-network:
+
+volumes:
+    data_dir:
+      driver_opts:
+        type: none
+        device: /home/erdemsirel-spark/projects/api/data
+        o: bind
+
+services:
+    web-app:
+        image: web-app
+        container_name: webapp
+        ports:
+        - 8080:5000
+        volumes:
+        - data_dir:/opt/source_code
+        networks:
+        - test-network

@@ -67,7 +67,7 @@ class User(Resource):
 
         return jsonify({'users' : output})
 
-    def get_one_user(self):
+    def flas(self):
         parser = reqparse.RequestParser()
         parser.add_argument('public_id', help='PublicID')
         args = parser.parse_args() 
