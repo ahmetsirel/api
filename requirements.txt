@@ -2,3 +2,4 @@ flask
 flask-restful
 flask_httpauth
 requests
+flask_sqlalchemy

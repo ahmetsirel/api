@@ -67,7 +67,6 @@ class User(Resource):
 
         return jsonify({'users' : output})
 
-
     def get_one_user(self):
         parser = reqparse.RequestParser()
         parser.add_argument('public_id', help='PublicID')
@@ -116,4 +115,4 @@ api.add_resource(User, "/user" )
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
